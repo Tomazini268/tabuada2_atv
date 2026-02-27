@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Painel de tabuadas</title>
+    
+</head>
+<body>
+    <div class="box">
+    <h2>Gerador de Tabuada com While</h2>
+
+    <button onclick="gerarTodasTabuadas()">Gerar Todas as Tabuadas</button>
+   
+    <div id="resultado"></div>
+    </div>
+    <script>
+        function gerarTodasTabuadas() {
+            
+            let painel = document.getElementById("resultado");
+
+            let conteudoFinal
+
+            let t = 1
+
+            while ( t <= 10 ) {
+
+            t++    
+
+                conteudoFinal += "<div class= 'tabuada-bloco'><h3>Tabuada do " + t + "</h3>";
+
+                    let i = 1
+
+                    while ( i <=10 ) {
+                    i++    
+
+                        let resultado = t;
+
+                        resultado *=i;
+
+                        conteudoFinal += t + "x" + i + "=" + resultado + "<br>";
+
+                    }
+
+                    conteudoFinal += "</div>";
+            }
+
+            painel.innerHTML = conteudoFinal;
+        }
+    </script>
+</body>
+</html>
